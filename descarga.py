@@ -12,13 +12,14 @@ from guardar import guardar_video, guardar_tiktok, guardar_audio
 
 ruta1="/storage/emulated/0/Download/musica"
 
-ruta2="/storage/emulated/0/videos"
+ruta2="/storage/emulated/0/DCIM"
 
 menu=["youtube","tiktok","musica","ver archivos descargados","eliminar videos","eliminar audios","salir"]
 
 console=Console()
 
 # MENU
+
 
 
 def down():

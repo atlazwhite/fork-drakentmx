@@ -1,11 +1,23 @@
 import os
 import yt_dlp
+import glob
 from rich import print
 from log import console,get_progress,get_ydl_opts
 from rich.console import Console
-video_path="/storage/emulated/0/videos"
+video_path="/storage/emulated/0/DCIM"
 audio_path="/storage/emulated/0/Download/musica"
 console=Console()
+
+def escanear(carpeta):
+    archivos=glob.glob(f"{carpeta}/*")
+    if not archivos:
+        return
+    ultimo=max(archivos,key=os.path.getctime)
+    os.system(f"termux-media-scan '{ultimo}'")
+    print(f"[escaneado {os.path.basename(ultimo)}]")
+
+
+
 def obtener_cookies():
     if os.path.exists("cookies.txt"):
         return "cookies.txt"
@@ -36,6 +48,7 @@ def guardar_video():
     with progress:
         with yt_dlp.YoutubeDL(final_opts) as ydl:
             ydl.download([url])
+    escanear(video_path)
 
 
 def guardar_audio():
@@ -66,12 +79,13 @@ def guardar_audio():
     with progress:
         with yt_dlp.YoutubeDL(final_opts) as ydl:
             ydl.download([url])
+    escanear(audio_path)
 
 
 def guardar_tiktok():
     os.makedirs(video_path, exist_ok=True)
 
-    url = console.input("[bold gren]link de tiktok: [/bold green]")
+    url = console.input("[bold green]link de tiktok: [/bold green]")
     progress,hook= get_progress()
     opts=get_ydl_opts(video_path,hook)
 
@@ -89,3 +103,4 @@ def guardar_tiktok():
     with progress:
         with yt_dlp.YoutubeDL(yt_opts) as ydl:
             ydl.download([url])
+    escanear(video_path)
