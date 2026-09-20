@@ -21,6 +21,10 @@ Características
 - Soporte para "cookies.txt"
 - Compatible con Termux
 - Diseñado para funcionar directamente desde Android
+## 📸 Capturas
+
+![menu](img/menu.jpg)
+![descarga con exito](img/descarga.jpg)
 
 ---
 
