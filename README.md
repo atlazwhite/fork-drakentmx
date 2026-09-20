@@ -24,9 +24,7 @@ Características
 
 ---
 
-Requisitos
-
-Antes de instalar DrakenTMX necesitás:
+Pquetes:
 
 - Android
 - Termux
