@@ -49,10 +49,13 @@ git clone https://github.com/joakonoqui-cmd/drakentmx.git
 
 cd drakentmx
 
-3. Ejecutar Sh
+3. permisos
 
-chmod +x install.sh
-luego: ./install.sh
+chmod +x install.sh 
+
+4. Ejecutar sh
+
+./install.sh
 
 
 Aceptá el permiso de almacenamiento cuando Android lo solicite.
