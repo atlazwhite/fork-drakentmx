@@ -52,7 +52,7 @@ cd drakentmx
 3. Ejecutar Sh
 
 chmod +x install.sh
-./install.sh
+luego: ./install.sh
 
 
 Aceptá el permiso de almacenamiento cuando Android lo solicite.
