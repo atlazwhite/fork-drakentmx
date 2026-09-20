@@ -24,7 +24,7 @@ Características
 
 ---
 
-Pquetes:
+Paquetes:
 
 - Android
 - Termux
@@ -145,7 +145,7 @@ cookies.txt
 
 a:
 
-drakemtmx
+drakentmx
 
 La estructura quedaría aproximadamente así:
 
@@ -188,7 +188,7 @@ drakentmx/
 ├── descarga.py
 ├── guardar.py
 ├── README.md
-├── Cookies.txt
+├── cookies.txt
 └── .gitignore
 
 El archivo "cookies.txt" no forma parte del repositorio.
