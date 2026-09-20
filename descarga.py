@@ -8,7 +8,7 @@ import os
 
 from rich.console import Console
 
-from guardar import guardar_video, guardar_tiktok, guardar_audio
+from guardar import guardar_video, guardar_tiktok, guardar_audio, limpiar
 
 ruta1="/storage/emulated/0/Download/musica"
 
@@ -24,6 +24,7 @@ console=Console()
 
 def down():
     while True:
+        limpiar()
         print("[bold yellow]bienvenido al menu de descargas[/bold yellow] 👾")
         for posicion,opcion in enumerate(menu,start=1):
             print("")
@@ -70,12 +71,24 @@ def down():
             print("")       
             if not os.path.exists(ruta1) and not os.path.exists(ruta2):
                 print("[bold red]no hay archivos descargados[/bold red]")
+                print("00. salir")
+                salir=input("> ")
+                if salir =="00":
+                    break
             elif not os.path.exists(ruta1):
                 print("[bold red]no hay canciones,solo videos[/bold red]")
+                print("00. salir")
+                salir=input("> ")
+                if salir=="00":
+                    break
             elif not os.path.exists(ruta2):
                 print("[bold red]no hay videos,solo canciones[/bold red]")
                 for archivo in os.listdir(ruta1):
                     print(archivo)
+                    print("00. salir")
+                    salir=input("> ")
+                    if salir=="00":
+                        break
             else:  
                 if not os.listdir(ruta1) and not os.listdir(ruta2): 
                     print("[bold red]no hay archivos descargados[/bold red]")
@@ -89,6 +102,10 @@ def down():
                         print("[bold green]videos descargados[/bold green]")
                         print(archivo)
                         print("")
+                        print("00. salir")
+                        salir=input("> ")
+                        if salir=="00":
+                            break
 
 
 
@@ -109,7 +126,7 @@ def down():
                 for i,archivo in enumerate(archivos,1):
                     print(f"{i}-{archivo}")
                 print("[bold blue]00. salir[/bold blue]")
-                opcion=console.input("[bold blue]elija que borrar: [/bold blue]").strip()
+                opcion=console.input("[bold blue]> [/bold blue]").strip()
                 if opcion=="00":
                     print("")
                     break
@@ -154,7 +171,7 @@ def down():
                     print(f"{i}-{archivo}")
                     print("")
                 print("00. salir")
-                opcion=console.input("[bold blue]elija que borrar: [/bold blue]").strip()
+                opcion=console.input("[bold blue]> [/bold blue]").strip()
                 print("")
                 if opcion=="00":
                     print("")

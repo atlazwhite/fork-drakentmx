@@ -6,6 +6,11 @@ from rich.console import Console
 video_path="/storage/emulated/0/videos"
 audio_path="/storage/emulated/0/Download/musica"
 console=Console()
+
+def limpiar():
+    console.clear()
+
+
 def obtener_cookies():
     if os.path.exists("cookies.txt"):
         return "cookies.txt"
@@ -13,9 +18,17 @@ def obtener_cookies():
     return None
 
 def guardar_video():
+    limpiar()
     os.makedirs(video_path, exist_ok=True)
+    while True:
+        print("[bold cyan]1.[/bold cyan] [bold blue]ingresar link[/bold blue]")
+        print("[bold cyan]2.[/bold cyan][bold blue] salir[/bold blue]")
+        opcion=input("> ")
+        if opcion=="1":
+            url = console.input("[bold green]ingresar link: [/bold green]")
+        elif opcion=="2":
+            break
 
-    url = console.input("[bold green]ingresar link: [/bold green]")
 
     progress, hook = get_progress()
     opts = get_ydl_opts(video_path, hook)
@@ -39,9 +52,16 @@ def guardar_video():
 
 
 def guardar_audio():
+    limpiar()
     os.makedirs(audio_path,exist_ok=True)
-
-    url = console.input("[bold green]ingresar link: [/bold green]")
+    while True:
+        print("[bold cyan]1.[/bold cyan] [bold blue]ingresar link[/bold blue]")
+        print("[bold cyan]2.[/bold cyan] [bold blue]salir[/bold blue]")
+        opcion=input("> ")
+        if opcion=="1":
+            url = console.input("[bold green]ingresar link: [/bold green]")
+        elif opcion=="2":
+            break
     progress,hook=get_progress()
     opts= get_ydl_opts(audio_path,hook)
 
@@ -69,9 +89,17 @@ def guardar_audio():
 
 
 def guardar_tiktok():
+    limpiar()
     os.makedirs(video_path, exist_ok=True)
+    while True:
+        print("[bold cyan]1.[/bold cyan][bold blue]ingresar link[/bold blue]")
+        print("[bold cyan]2.[/bold cyan][bold blue]salir[/bold blue]")
+        opcion=input("> ")
+        if opcion=="1":
+            url = console.input("[bold green]link de tiktok: [/bold green]")
+        elif opcion=="2":
+            break
 
-    url = console.input("[bold green]link de tiktok: [/bold green]")
     progress,hook= get_progress()
     opts=get_ydl_opts(video_path,hook)
 
