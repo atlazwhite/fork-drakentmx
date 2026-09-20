@@ -39,32 +39,23 @@ Antes de instalar DrakenTMX necesitás:
 ---
 
 Instalación
+1. instalar git 
 
-1. Actualizar Termux
+pkg install git -y
 
-pkg update && pkg upgrade -y
-
-2. Instalar dependencias
-
-pkg install python git ffmpeg -y
-
-3. Clonar el repositorio
+2. Clonar repositorio
 
 git clone https://github.com/joakonoqui-cmd/drakentmx.git
 
-4. Entrar al proyecto
+2. ir a la carpeta 
 
 cd drakentmx
 
-5. Instalar yt-dlp y rich
+3. Ejecutar Sh
 
-pip install yt-dlp
+chmod +x install.sh
+./install.sh
 
-pip install rich
-
-6. Dar acceso al almacenamiento
-
-termux-setup-storage
 
 Aceptá el permiso de almacenamiento cuando Android lo solicite.
 
