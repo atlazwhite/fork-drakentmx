@@ -2,5 +2,4 @@ __pycache__/
 *.pyc
 *,pyc
 cookies.txt
-*.txt
 __pycache__/
